@@ -1,0 +1,11 @@
+
+<changeSet id="2" author="nkoksharov" context="initdata">
+    <sql>
+        insert into users values (123, 'ROLE_USER','liquibase@mail.com');
+    </sql>
+    <rollback>
+        <sql>
+            delete from roles where id = 123;
+        </sql>
+    </rollback>
+</changeSet>

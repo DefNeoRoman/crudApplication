@@ -15,4 +15,31 @@
     </dependency>
 </dependencies>
 
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupid>org.liquibase</groupid>
+                <artifactid>liquibase-plugin</artifactid>
+                <version>1.6.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <propertyfile>src/main/resources/liquibase.properties</propertyfile>
+                        </configuration>
+                        <goals>
+                            <goal>update</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>
